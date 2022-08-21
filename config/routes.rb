@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get '/', to: redirect('/api/v1/welcome')
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  namespace :api do
+    namespace :v1 do
+      resources :health_checks, only: :index
+      resources :welcome, only: :index
+      resources :products, only: :index
+    end
+  end
 end
