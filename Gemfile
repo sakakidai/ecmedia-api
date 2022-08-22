@@ -43,6 +43,6 @@ group :development do
   # gem "spring"
 end
 
-gem 'active_model_serializers', '~> 0.10.0'
+gem "active_model_serializers", "~> 0.10.0"
 gem "faker"
-
+gem 'devise_token_auth', '>= 1.2.0', git: "https://github.com/lynndylanhurley/devise_token_auth"
