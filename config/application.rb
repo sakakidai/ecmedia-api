@@ -32,6 +32,13 @@ module App
     # Set locale(default is :en)
     config.i18n.default_locale = :ja
 
+    # Deviseのwardenがセッションにアクセスしエラーが発生するため追記
+    # 発生するエラー: ActionDispatch::Request::Session::DisabledSessionError
+    # Doc: https://github.com/heartcombo/devise/issues/5443
+    config.session_store :cookie_store, key: '_ecmedia_session'
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use config.session_store, config.session_options
+
     # Doc: https://railsguides.jp/configuring.html#config-add-autoload-paths-to-load-path
     # Doc: https://github.com/fxn/zeitwerk
     # The directories managed by Zeitwerk do not even need to be in $LOAD_PATH.

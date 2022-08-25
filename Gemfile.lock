@@ -97,6 +97,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.10.2)
+      devise (>= 4.8.0)
     digest (3.1.0)
     erubi (1.11.0)
     faker (2.22.0)
@@ -198,6 +200,7 @@ DEPENDENCIES
   bootsnap
   debug
   devise
+  devise-i18n
   devise_token_auth (>= 1.2.0)!
   faker
   pg (~> 1.1)
