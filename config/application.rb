@@ -48,5 +48,8 @@ module App
     config.add_autoload_paths_to_load_path = false
 
     config.api_only = true
+
+    # Protect from open redirect attacks in `redirect_back_or_to` and `redirect_to`.
+    config.action_controller.raise_on_open_redirects = true
   end
 end
