@@ -1,5 +1,6 @@
 class Api::V1::Auth::ConfirmationsController < DeviseTokenAuth::ConfirmationsController
 
+  # 確認メールのリンクをクリックしたときの処理
   # DeviseTokenAuth::ConfirmationsController#showをコピーして
   # redirect_toの引数にallow_other_host: trueを追加
   def show
@@ -29,9 +30,14 @@ class Api::V1::Auth::ConfirmationsController < DeviseTokenAuth::ConfirmationsCon
     end
   end
 
+  # 確認メールの再送信
+  def create
+    super
+  end
+
   private
 
   def resource_params
-    params.permit(:email, :confirmation_token, :config_name, :redirect_url)
+    params.except(:config).permit(:email, :confirmation_token, :config_name, :redirect_url, :config)
   end
 end

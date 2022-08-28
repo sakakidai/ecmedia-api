@@ -3,7 +3,7 @@ class Api::V1::Auth::SessionsController < DeviseTokenAuth::SessionsController
     super
   end
 
-  def delete
+  def destroy
     super
   end
 
