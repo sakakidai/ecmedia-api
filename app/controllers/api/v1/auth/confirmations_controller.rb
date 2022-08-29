@@ -1,11 +1,10 @@
 class Api::V1::Auth::ConfirmationsController < DeviseTokenAuth::ConfirmationsController
-
   # 確認メールのリンクをクリックしたときの処理
   # DeviseTokenAuth::ConfirmationsController#showをコピーして
   # redirect_toの引数にallow_other_host: trueを追加
   def show
     @resource = resource_class.confirm_by_token(resource_params[:confirmation_token])
-    
+
     if @resource.errors.empty?
       yield @resource if block_given?
 
@@ -22,7 +21,7 @@ class Api::V1::Auth::ConfirmationsController < DeviseTokenAuth::ConfirmationsCon
         redirect_to_link = signed_in_resource.build_auth_url(redirect_url, redirect_headers)
       else
         redirect_to_link = DeviseTokenAuth::Url.generate(redirect_url, redirect_header_options)
-     end
+      end
 
       redirect_to(redirect_to_link, allow_other_host: true)
     else

@@ -12,6 +12,7 @@ class Api::V1::Auth::RegistrationsController < DeviseTokenAuth::RegistrationsCon
   end
 
   private
+
   def sign_up_params
     params.except(:confirm_success_url).permit(:name, :email, :password, :password_confirmation)
   end

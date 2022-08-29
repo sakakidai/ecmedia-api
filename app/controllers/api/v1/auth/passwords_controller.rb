@@ -1,5 +1,4 @@
 class Api::V1::Auth::PasswordsController < DeviseTokenAuth::PasswordsController
-
   # パスワードリセットのメールを送信
   def create
     super

@@ -1,0 +1,40 @@
+inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-rails
+  - rubocop-performance
+
+AllCops:
+  TargetRubyVersion: 3.1.2
+  TargetRailsVersion: 7.0.3.1
+  Exclude:
+    - "vendor/**/*"
+    - "bin/**/*"
+    - "db/**/*"
+    - "tmp/**/*"
+
+# Doc: https://docs.rubocop.org/rubocop-rails/cops.html#rails
+Rails:
+  Enabled: true
+
+# Doc: https://docs.rubocop.org/rubocop/cops_style.html#styleasciicomments
+Style/AsciiComments:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 160
+
+# Doc: https://docs.rubocop.org/rubocop/cops_metrics.html#metricsblocklength
+Metrics/BlockLength:
+  CountAsOne: ["array", "hash", "heredoc"]
+  Exclude:
+    - "config/routes.rb"
+    - "spec/**/*"
+
+# Doc: https://docs.rubocop.org/rubocop/cops_metrics.html#metricsmethodlength
+Metrics/MethodLength:
+  CountAsOne: ["array", "hash", "heredoc"]
+  Max: 20
+
+Metrics/ModuleLength:
+  CountAsOne: ["array", "hash", "heredoc"]
