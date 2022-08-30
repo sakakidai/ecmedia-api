@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Doc: https://api.rubyonrails.org/classes/ActionController/ParamsWrapper.html
 # Doc: https://github.com/rails/rails/blob/main/actionpack/lib/action_controller/metal/params_wrapper.rb
 # Devise auth tokenでリクエストの親エレメントない場合、Unpermitted parameterが発生することを防ぐため

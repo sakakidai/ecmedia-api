@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 app_dir = File.expand_path('..', __dir__)
-environment ENV.fetch('RAILS_ENV') { 'development' }
-port ENV.fetch('PORT') { 3010 }
+environment ENV.fetch('RAILS_ENV', 'development')
+port ENV.fetch('PORT', 3010)
 
 bind "unix://#{app_dir}/tmp/sockets/puma.sock"
-pidfile ENV.fetch('PIDFILE') { 'tmp/pids/server.pid' }
+pidfile ENV.fetch('PIDFILE', 'tmp/pids/server.pid')
 
-max_threads_count = ENV.fetch('RAILS_MAX_THREADS') { 5 }
+max_threads_count = ENV.fetch('RAILS_MAX_THREADS', 5)
 min_threads_count = ENV.fetch('RAILS_MIN_THREADS') { max_threads_count }
 threads min_threads_count, max_threads_count
 worker_timeout 3600 if ENV.fetch('RAILS_ENV', 'development') == 'development'

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Api::V1::Auth::ConfirmationsController < DeviseTokenAuth::ConfirmationsController
   # 確認メールのリンクをクリックしたときの処理
   # DeviseTokenAuth::ConfirmationsController#showをコピーして
@@ -30,9 +32,9 @@ class Api::V1::Auth::ConfirmationsController < DeviseTokenAuth::ConfirmationsCon
   end
 
   # 確認メールの再送信
-  def create
-    super
-  end
+  # def create
+  #   super
+  # end
 
   private
 

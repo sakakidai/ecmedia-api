@@ -1,11 +1,13 @@
-class Api::V1::Auth::SessionsController < DeviseTokenAuth::SessionsController
-  def create
-    super
-  end
+# frozen_string_literal: true
 
-  def destroy
-    super
-  end
+class Api::V1::Auth::SessionsController < DeviseTokenAuth::SessionsController
+  # def create
+  #   super
+  # end
+
+  # def destroy
+  #   super
+  # end
 
   private
 

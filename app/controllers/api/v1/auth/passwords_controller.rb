@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 class Api::V1::Auth::PasswordsController < DeviseTokenAuth::PasswordsController
   # パスワードリセットのメールを送信
-  def create
-    super
-  end
+  # def create
+  #   super
+  # end
 
   # パスワードの変更
-  def update
-    super
-  end
+  # def update
+  #   super
+  # end
 
   # パスワードリセットメールのリンクをクリックしたときの処理
   # DeviseTokenAuth::PasswordsController#editをコピーして

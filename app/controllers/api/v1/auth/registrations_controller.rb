@@ -1,15 +1,17 @@
+# frozen_string_literal: true
+
 class Api::V1::Auth::RegistrationsController < DeviseTokenAuth::RegistrationsController
-  def create
-    super
-  end
+  # def create
+  #   super
+  # end
 
-  def update
-    super
-  end
+  # def update
+  #   super
+  # end
 
-  def destroy
-    super
-  end
+  # def destroy
+  #   super
+  # end
 
   private
 

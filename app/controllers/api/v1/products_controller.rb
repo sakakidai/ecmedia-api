@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Api::V1::ProductsController < ApplicationController
   before_action :authenticate_api_v1_user!
 

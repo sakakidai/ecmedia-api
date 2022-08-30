@@ -21,8 +21,27 @@ Rails:
 Style/AsciiComments:
   Enabled: false
 
+# Doc: https://docs.rubocop.org/rubocop/cops_style.html#styleclassandmodulechildren
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+# Doc: https://docs.rubocop.org/rubocop/cops_style.html#styledocumentation
+Style/Documentation:
+  Enabled: false
+
 Layout/LineLength:
   Max: 160
+
+# Doc: https://docs.rubocop.org/rubocop/cops_metrics.html#metricsabcsize
+Metrics/AbcSize:
+  Max: 35
+
+# Doc: https://docs.rubocop.org/rubocop/cops_metrics.html#metricscyclomaticcomplexity
+Metrics/CyclomaticComplexity:
+  Max: 14
+
+Metrics/PerceivedComplexity:
+  Max: 13
 
 # Doc: https://docs.rubocop.org/rubocop/cops_metrics.html#metricsblocklength
 Metrics/BlockLength:
