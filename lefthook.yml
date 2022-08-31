@@ -1,0 +1,16 @@
+# EXAMPLE USAGE:
+#
+#   Refer for explanation to following link:
+#   https://github.com/evilmartians/lefthook/blob/master/docs/full_guide.md
+#
+#   Tool: https://github.com/evilmartians/lefthook
+#
+pre-commit:
+  commands:
+    docker-compose:
+      root: ../containers/
+      run: docker-compose up -d
+    rubocop:
+      root: ../containers/
+      glob: "*.rb"
+      run: docker-compose exec api bundle exec rubocop
