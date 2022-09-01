@@ -3,6 +3,7 @@ inherit_from: .rubocop_todo.yml
 require:
   - rubocop-rails
   - rubocop-performance
+  - rubocop-rspec
 
 AllCops:
   TargetRubyVersion: 3.1.2
@@ -16,6 +17,14 @@ AllCops:
 # Doc: https://docs.rubocop.org/rubocop-rails/cops.html#rails
 Rails:
   Enabled: true
+
+# Doc: https://docs.rubocop.org/rubocop-rspec/cops_rspec.html#rspecexamplelength
+RSpec/ExampleLength:
+  Enabled: false
+
+# Doc: https://docs.rubocop.org/rubocop-rspec/cops_rspec.html#rspecmultipleexpectations
+RSpec/MultipleExpectations:
+  Max: 3
 
 # Doc: https://docs.rubocop.org/rubocop/cops_style.html#styleasciicomments
 Style/AsciiComments:
@@ -31,6 +40,15 @@ Style/Documentation:
 
 Layout/LineLength:
   Max: 160
+
+Layout/BlockEndNewline:
+  Exclude:
+    - "spec/**/*"
+
+# Doc: https://docs.rubocop.org/rubocop/cops_style.html#styleblockdelimiters
+Style/BlockDelimiters:
+  Exclude:
+    - "spec/**/*"
 
 # Doc: https://docs.rubocop.org/rubocop/cops_metrics.html#metricsabcsize
 Metrics/AbcSize:

@@ -53,5 +53,10 @@ module App
 
     # Protect from open redirect attacks in `redirect_back_or_to` and `redirect_to`.
     config.action_controller.raise_on_open_redirects = true
+
+    config.paths['log'] = "log/#{Rails.env}_ecmedia.log"
+    logger = ActiveSupport::Logger.new(config.paths['log'].first)
+    logger.formatter = ::Logger::Formatter.new
+    config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
 end
